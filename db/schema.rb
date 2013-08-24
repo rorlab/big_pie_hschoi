@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20130824024641) do
     t.string   "photo"
     t.string   "url_ref"
     t.string   "description"
-    t.string   "starts_count"
+    t.integer  "starts_count", default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end

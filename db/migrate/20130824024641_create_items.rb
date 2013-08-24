@@ -5,7 +5,7 @@ class CreateItems < ActiveRecord::Migration
       t.string :photo
       t.string :url_ref
       t.string :description
-      t.string :starts_count
+      t.integer :starts_count, :default => 0
 
       t.timestamps
     end
