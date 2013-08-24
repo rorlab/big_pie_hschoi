@@ -3,7 +3,7 @@
 class PhotoUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
-  # include CarrierWave::RMagick
+  include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
@@ -15,6 +15,17 @@ class PhotoUploader < CarrierWave::Uploader::Base
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
+
+  version :post_image do
+    process :resize_to_fit => [500, 500]
+  end
+
+  # Create different versions of your uploaded files:
+  # 참고문서 : http://carrierwave.rubyforge.org/rdoc/classes/CarrierWave/RMagick.html (by H.S.Choi)
+  # resize_to_fit : Resize the image to fit within the specified dimensions while retaining the original aspect ratio. The image may be shorter or narrower than specified in the smaller dimension but will not be larger than the specified values.
+  # version :sized_photo do
+  #   process :resize_to_limit => [500, 500]
+  # end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url

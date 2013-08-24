@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>User:</strong>
   <%= @item.user.email %>
@@ -7,7 +5,7 @@
 
 <p>
   <strong>Photo:</strong>
-  <%= image_tag @item.photo %>
+  <%= link_to image_tag(@item.photo_url(:post_image)),  @item.photo_url %>
 </p>
 
 <p>

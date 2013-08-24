@@ -6,6 +6,10 @@ class ItemsController < ApplicationController
   # GET /items.json
   def index
     @items = Item.all
+    if params[:user_id]
+      @other_user = User.find(params[:user_id])
+      @items = @items.where( user_id: @other_user.id) 
+    end
   end
 
   # GET /items/1

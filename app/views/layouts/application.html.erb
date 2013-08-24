@@ -38,43 +38,19 @@
   </head>
   <body>
 
-    <div class="navbar navbar-fluid-top">
-      <div class="navbar-inner">
-        <div class="container-fluid">
-          <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-          <%= link_to "Big Pie", root_path, :class => "brand" %>
-          <div class="container-fluid nav-collapse">
-            <ul class="nav">
-              <li><%= link_to 'All', items_path  %></li>
-              <li><%= link_to '<i class="icon-plus"></i> New item'.html_safe, new_item_path  %></li>
-              <% if user_signed_in? %>
-                <li><%= link_to  "Sign Out", destroy_user_session_path, :method => :delete %></li>
-              <% else %>
-                <li><%= link_to "Sign In", new_user_session_path  %></li>
-              <% end %>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div>
-      </div>
-    </div>
+    <%= render "layouts/shared/navbar" %>
 
     <div class="container-fluid">
       <div class="row-fluid">
-        <div class="span12">
+        <div class="span10 offset1">
           <%= bootstrap_flash %>
-          <%= yield %>
+          <%= content_for?(:item_content) ? yield(:item_content) : yield %>
         </div>
       </div><!--/row-->
 
-      <footer>
-        <p>&copy; Big Pie 2013</p>
-      </footer>
-
     </div> <!-- /container -->
+
+    <%= render 'layouts/shared/footer' %>
 
   </body>
 </html>
