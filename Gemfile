@@ -34,6 +34,7 @@ end
 
 gem 'less-rails'
 gem "twitter-bootstrap-rails"
+gem 'flatui-rails'
 
 gem 'simple_form', github: 'plataformatec/simple_form', tag: 'v3.0.0.rc'
 

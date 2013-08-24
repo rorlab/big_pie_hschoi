@@ -53,6 +53,8 @@ GEM
       erubis (>= 2.6.6)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bootstrap-sass (2.2.2.0)
+      sass (~> 3.2)
     builder (3.1.4)
     callsite (0.0.11)
     carrierwave (0.9.0)
@@ -71,6 +73,10 @@ GEM
     debug_inspector (0.0.2)
     erubis (2.7.0)
     execjs (2.0.0)
+    flatui-rails (0.0.4)
+      bootstrap-sass (= 2.2.2)
+      railties (>= 3.1)
+      sass-rails (>= 3.2.0)
     hike (1.2.3)
     i18n (0.6.5)
     jbuilder (1.5.0)
@@ -172,6 +178,7 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 4.0.0)
   devise!
+  flatui-rails
   jbuilder (~> 1.2)
   jquery-rails
   less-rails
